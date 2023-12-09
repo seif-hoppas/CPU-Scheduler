@@ -1,5 +1,5 @@
-import java.awt.List;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.PriorityQueue;
 
 public class ShortestJobFirst extends CPUScheduler {
 
@@ -18,7 +18,15 @@ public class ShortestJobFirst extends CPUScheduler {
     }
 
     public void process() {
+        int start_time = 0;
+        int finish_time = 0;
         for (ProcessControlBlock processControlBlock : ReadyQueue) {
+            start_time = finish_time;
+            finish_time += processControlBlock.getBurstTime();
+            Timeline.add(new TimeLineEntry(processControlBlock.getName(), start_time, finish_time));
+        }
+        for(TimeLineEntry time : Timeline){
+            time.print();
         }
     }
 }

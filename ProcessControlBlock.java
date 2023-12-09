@@ -13,7 +13,7 @@ public class ProcessControlBlock {
         this.TurnAroundTime = 0;
     }
 
-    // getters 
+    // getters
     public String getName() {
         return this.Name;
     }
@@ -33,7 +33,6 @@ public class ProcessControlBlock {
     public int getPriorityNumber() {
         return this.PriorityNumber;
     }
-
 
     // setters 
     public void setPriorityNumber(int priority) {
