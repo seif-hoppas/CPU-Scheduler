@@ -8,15 +8,18 @@ public class ShortestJobFirst extends CPUScheduler {
     // Represent the Gantt Chart of the scheduling process
     ArrayList<TimeLineEntry> Timeline;
 
+
     public ShortestJobFirst() {
         ReadyQueue = new PriorityQueue<>(new ProcessControlBlockComparator());
         Timeline = new ArrayList<>();
     }
 
+    @Override
     public void AddProcess(ProcessControlBlock process) {
         this.ReadyQueue.add(process);
     }
 
+    @Override
     public void process() {
         int start_time = 0;
         int finish_time = 0;

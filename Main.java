@@ -1,17 +1,34 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        ProcessControlBlock p1 = new ProcessControlBlock("p1", 0, 2, 4);
-        ProcessControlBlock p2 = new ProcessControlBlock("p2", 0, 4, 1);
-        ProcessControlBlock p3 = new ProcessControlBlock("p3", 0, 4, 2);
-        ProcessControlBlock p4 = new ProcessControlBlock("p4", 0, 7, 6);
+        int choice;
+        Scanner scan = new Scanner(System.in);
+        choice = scan.nextInt();
 
-        CPUScheduler FCFS = new ShortestJobFirst();
-        FCFS.AddProcess(p4);
-        FCFS.AddProcess(p1);
-        FCFS.AddProcess(p3);
-        FCFS.AddProcess(p2);
+        // default
+        CPUScheduler strategy;
+        switch (choice) {
+            case 1:
+                strategy = new ShortestJobFirst();
+                break;
+            case 2:
+                strategy = new ShortestRemainingTimeFirst();
+                break;
+            case 3:
+                strategy = new ShortestJobFirst();
+                break;
+            case 4:
+                strategy = new ShortestJobFirst();
+                break;
+            default:
+                strategy = new ShortestJobFirst();
+                break;
+        }
+        strategy.process();
 
-        FCFS.process();
+        scan.close();
+
+
     }
 }
-
