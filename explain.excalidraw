@@ -1,0 +1,171 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor",
+  "elements": [
+    {
+      "id": "pbjNxmKtsDjOlL6sLWGgr",
+      "type": "freedraw",
+      "x": 309,
+      "y": 383,
+      "width": 1227,
+      "height": 77,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 1265909694,
+      "version": 32,
+      "versionNonce": 1846352802,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1702243482139,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          25,
+          -3
+        ],
+        [
+          69,
+          -6
+        ],
+        [
+          198,
+          -6
+        ],
+        [
+          274,
+          5
+        ],
+        [
+          302,
+          14
+        ],
+        [
+          290,
+          15
+        ],
+        [
+          315,
+          8
+        ],
+        [
+          342,
+          5
+        ],
+        [
+          491,
+          25
+        ],
+        [
+          527,
+          43
+        ],
+        [
+          544,
+          52
+        ],
+        [
+          554,
+          49
+        ],
+        [
+          597,
+          42
+        ],
+        [
+          728,
+          57
+        ],
+        [
+          776,
+          71
+        ],
+        [
+          787,
+          66
+        ],
+        [
+          825,
+          52
+        ],
+        [
+          927,
+          29
+        ],
+        [
+          976,
+          21
+        ],
+        [
+          993,
+          20
+        ],
+        [
+          1041,
+          20
+        ],
+        [
+          1121,
+          28
+        ],
+        [
+          1149,
+          32
+        ],
+        [
+          1161,
+          27
+        ],
+        [
+          1188,
+          17
+        ],
+        [
+          1219,
+          6
+        ],
+        [
+          1225,
+          3
+        ],
+        [
+          1226,
+          3
+        ],
+        [
+          1227,
+          3
+        ],
+        [
+          1227,
+          3
+        ]
+      ],
+      "pressures": [],
+      "simulatePressure": true,
+      "lastCommittedPoint": [
+        1227,
+        3
+      ]
+    }
+  ],
+  "appState": {
+    "gridSize": null,
+    "viewBackgroundColor": "#ffffff"
+  },
+  "files": {}
+}
