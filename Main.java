@@ -11,6 +11,7 @@ public class Main {
         switch (choice) {
             case 1:
                 strategy = new ShortestJobFirst();
+                
                 break;
             case 2:
                 strategy = new ShortestRemainingTimeFirst();
