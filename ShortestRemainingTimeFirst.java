@@ -4,8 +4,8 @@ import java.util.PriorityQueue;
 public class ShortestRemainingTimeFirst extends CPUScheduler {
     // Time Line
     /*
-     * p0 p0
-     * p1
+     * p0   p0
+     *   p1
      */
 
     PriorityQueue<ProcessControlBlock> ReadyQueue;
@@ -22,8 +22,8 @@ public class ShortestRemainingTimeFirst extends CPUScheduler {
     /*
      * 1 2 3 4 5 6 7 8 9 --->
      * - - - - 1 1 1 1 1 1
-     * 2 2
-     * 3 3 3 3
+     *             2 2
+     *                  3 3 3 3
      */
 
     @Override
