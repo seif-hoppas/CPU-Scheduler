@@ -15,7 +15,7 @@ public class ShortestRemainingTimeFirst extends CPUScheduler {
         CurrentProcessControlBlock = null;
         ReadyQueue = new PriorityQueue<>(new ProcessControlBlockComparator());
         ProcessControlBlockList = new ArrayList<ProcessControlBlock>();
-        Timeline = new ArrayList<>(); 
+        Timeline = new ArrayList<>();
     }
 
     // Process
@@ -36,7 +36,6 @@ public class ShortestRemainingTimeFirst extends CPUScheduler {
                 // remove from list , add to readyqueue
                 ReadyQueue.add(ProcessControlBlockList.remove(0));
             }
-
             // catch the smallest burst Process , check if i do have a process
             if (!ReadyQueue.isEmpty()) {
                 CurrentProcessControlBlock = ReadyQueue.poll();
@@ -47,12 +46,12 @@ public class ShortestRemainingTimeFirst extends CPUScheduler {
 
                 // first process entry
                 if(Timeline.size() == 0){
-                    Timeline.add(new TimeLineEntry(CurrentProcessControlBlock.getName() , currentTime, currentTime));
+                    Timeline.add(new TimeLineEntry(CurrentProcessControlBlock.getName() , currentTime, currentTime + 1));
                 }
                 // alternate the process
                 else if(Timeline.size() != 0 && CurrentProcessControlBlock.getName() != Timeline.get(Timeline.size() - 1).getProcessName()){
                     // Timeline.add(CurrentProcessControlBlock.getName());
-                    Timeline.add(new TimeLineEntry(CurrentProcessControlBlock.getName() , currentTime, currentTime));
+                    Timeline.add(new TimeLineEntry(CurrentProcessControlBlock.getName() , currentTime, currentTime + 1));
                 }
                 // update process finish time
                 else{
@@ -64,7 +63,6 @@ public class ShortestRemainingTimeFirst extends CPUScheduler {
                     ReadyQueue.add(CurrentProcessControlBlock);
                 }
             }
-
             // deattach the process
             CurrentProcessControlBlock = null;
             // increament Time line
@@ -73,7 +71,5 @@ public class ShortestRemainingTimeFirst extends CPUScheduler {
         for (TimeLineEntry timeLineEntry : Timeline) {
             timeLineEntry.print();
         }
-
     }
-
 }
