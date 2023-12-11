@@ -31,13 +31,12 @@ public class ShortestRemainingTimeFirst extends CPUScheduler {
         int currentTime = 0;
         while (!ReadyQueue.isEmpty() || !ProcessControlBlockList.isEmpty()) {
 
-            // Check for new ProcessControlBlock to add in the ReadyQueue
+            // submit a new process to the Ready Queue
             while (!ProcessControlBlockList.isEmpty() && ProcessControlBlockList.get(0).getArrivalTime() <= currentTime) {
                 // remove from list , add to readyqueue
                 ReadyQueue.add(ProcessControlBlockList.remove(0));
             }
 
-            // catch the smallest burst Process , check if i do have a process
             if (!ReadyQueue.isEmpty()) {
                 CurrentProcessControlBlock = ReadyQueue.poll();
             }
@@ -45,16 +44,16 @@ public class ShortestRemainingTimeFirst extends CPUScheduler {
             if(CurrentProcessControlBlock != null){
                 System.out.println("Time " + currentTime + ": Running process " + CurrentProcessControlBlock.getName());
 
-                // first process entry
+                // Add very process to execute in the time line
                 if(Timeline.size() == 0){
                     Timeline.add(new TimeLineEntry(CurrentProcessControlBlock.getName() , currentTime, currentTime));
                 }
-                // alternate the process
+
+                // a new process to be added into the Timeline 
                 else if(Timeline.size() != 0 && CurrentProcessControlBlock.getName() != Timeline.get(Timeline.size() - 1).getProcessName()){
-                    // Timeline.add(CurrentProcessControlBlock.getName());
                     Timeline.add(new TimeLineEntry(CurrentProcessControlBlock.getName() , currentTime, currentTime));
                 }
-                // update process finish time
+                // the process still executing then update its finish time 
                 else{
                     Timeline.get(Timeline.size() - 1).setFinishTime(currentTime);
                 }
@@ -65,11 +64,12 @@ public class ShortestRemainingTimeFirst extends CPUScheduler {
                 }
             }
 
-            // deattach the process
+            // deattach the process the CPU
             CurrentProcessControlBlock = null;
-            // increament Time line
+
             currentTime++;
         }
+
         for (TimeLineEntry timeLineEntry : Timeline) {
             timeLineEntry.print();
         }
